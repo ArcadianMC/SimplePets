@@ -1,5 +1,7 @@
 package simplepets.brainsynder.commands;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -43,7 +45,9 @@ public class CMD_Pet implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
         if (command.getName().equalsIgnoreCase("pet")) {
+
             if (!(commandSender instanceof Player)) {
+
                 if (args.length == 0) {
                     for (PetCommand gcmd : CMD_Pet.commands) {
                         String name = "", description = "", usage = "";
