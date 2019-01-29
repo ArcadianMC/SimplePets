@@ -51,7 +51,7 @@ public class PlotSquaredLink extends PluginLink<BukkitMain> implements IPlotSqua
             return PetCore.get().getConfiguration().getBoolean("PlotSquared.Spawn-Pets.On-Unclaimed-Plots");
 
         if (PetCore.get().getConfiguration().getBoolean("PlotSquared.Block-If-Denied"))
-            if (owner != null) if (plot.isDenied(owner.getPlayer().getUniqueId())) return false;
+            if (owner != null) return !plot.isDenied(owner.getPlayer().getUniqueId());
 
         return true;
     }

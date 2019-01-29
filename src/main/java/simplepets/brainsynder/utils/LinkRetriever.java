@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import simplepets.brainsynder.PetCore;
 import simplepets.brainsynder.links.IPluginLink;
 import simplepets.brainsynder.links.IProtectionLink;
+import simplepets.brainsynder.links.impl.PlotSquaredLink;
 import simplepets.brainsynder.links.impl.VaultLink;
 import simplepets.brainsynder.links.impl.WorldGuardLink;
 
@@ -18,6 +19,7 @@ public class LinkRetriever {
         PetCore.get().debug("Loading Plugin Links... (Vault and WorldGuard)");
         loaders.add(new WorldGuardLink());
         loaders.add(new VaultLink());
+        loaders.add(new PlotSquaredLink());
     }
 
     public static <T extends IProtectionLink> T getProtectionLink(Class<T> clazz) {
